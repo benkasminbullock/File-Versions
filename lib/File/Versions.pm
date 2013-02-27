@@ -25,11 +25,10 @@ require Exporter;
 @EXPORT_OK = qw/backup_name make_backup/;
 use warnings;
 use strict;
-use autodie;
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Get the type of version control. Not exported.
 
@@ -143,7 +142,8 @@ sub backup_name
 
     if (! -f $file) {
         $backup_file = $file;
-    } else {
+    }
+    else {
         my $version_control = get_version_control ($options);
 
         if (! $version_control ||
@@ -185,9 +185,9 @@ sub make_backup
     }
     my $backup_file = backup_name ($file);
     if (-f $backup_file) {
-        unlink $backup_file;
+        unlink $backup_file or croak "unlink $backup_file failed: $!";
     }
-    rename $file, $backup_file;
+    rename $file, $backup_file or croak "rename $file, $backup_file failed: $!";
     return $backup_file;
 }
 
