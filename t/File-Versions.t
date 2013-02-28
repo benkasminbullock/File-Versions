@@ -2,7 +2,6 @@ use warnings;
 use strict;
 use Test::More tests => 10;
 use FindBin;
-use autodie;
 use Cwd;
 
 use File::Path 'rmtree';

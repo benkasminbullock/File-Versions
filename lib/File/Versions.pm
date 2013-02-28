@@ -28,7 +28,7 @@ use strict;
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Get the type of version control. Not exported.
 
