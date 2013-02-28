@@ -1,10 +1,8 @@
-=head1 File::Versions
+=head1 NAME
 
-=head2 NAME
+File::Versions - Emacs-like versioned file names
 
-File::Versions
-
-=head2 SYNOPSIS
+=head1 SYNOPSIS
 
     use File::Versions 'make_backup';
     my $backup = make_backup ('file');
@@ -28,7 +26,7 @@ use strict;
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 # Get the type of version control. Not exported.
 
