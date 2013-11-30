@@ -10,10 +10,12 @@ File::Versions - Emacs-like versioned file names
     # 'numbered', 'file' is moved to 'file.~1~'. The value of the new
     # file name is put into '$backup'.
 
-This module offers a simple duplicate of the behaviour of programs
-like the Emacs text editor under Unix, where the environment variables
-C<VERSION_CONTROL> and C<SIMPLE_VERSION_CONTROL> allow one to make
-numbered backups of a file.
+=head1 DESCRIPTION
+
+This module duplicates the behaviour of programs like the Emacs text
+editor under Unix, where the environment variables C<VERSION_CONTROL>
+and C<SIMPLE_VERSION_CONTROL> allow one to make numbered backups of a
+file.
 
 =cut
 
@@ -26,7 +28,7 @@ use strict;
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 # Get the type of version control. Not exported.
 
@@ -202,11 +204,13 @@ There is something similar to this module in the source code of the
 
 Ben Bullock, bkb@cpan.org
 
-=head1 LICENCE
+=head1 COPYRIGHT & LICENCE
+
+Copyright (c) 2010, 2013 Ben Bullock 
 
 You can use, modify and redistribute this software library under the
 standard Perl licences (Gnu General Public Licence or Artistic
 licence).
 
-=end
+=cut
 
