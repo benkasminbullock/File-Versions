@@ -1,5 +1,13 @@
 Revision history for perl module File::Versions
 
+0.07 2014-02-07
+
+* Add licence, minimum Perl version in "Makefile.PL".
+
+0.06 2013-11-30
+
+* Fix up abstract and author in "Makefile.PL".
+
 0.05 2013-11-30
 
 * Add "Changes"

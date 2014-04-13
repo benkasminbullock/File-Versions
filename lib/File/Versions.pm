@@ -28,7 +28,7 @@ use strict;
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.05;
+our $VERSION = 0.07;
 
 # Get the type of version control. Not exported.
 
@@ -206,7 +206,7 @@ Ben Bullock, bkb@cpan.org
 
 =head1 COPYRIGHT & LICENCE
 
-Copyright (c) 2010, 2013 Ben Bullock 
+Copyright (c) 2010, 2013, 2014 Ben Bullock 
 
 You can use, modify and redistribute this software library under the
 standard Perl licences (Gnu General Public Licence or Artistic
