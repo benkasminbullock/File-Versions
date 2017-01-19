@@ -4,7 +4,7 @@ use strict;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw/backup_name make_backup/;
-our %EXPORT_TAGS => ('all' => \@EXPORT_OK);
+our %EXPORT_TAGS = ('all' => \@EXPORT_OK);
 use Carp;
 use List::Util qw/max/;
 

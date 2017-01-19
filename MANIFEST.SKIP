@@ -13,3 +13,5 @@
 ^xt/.*\.t$
 # Templates
 ^lib/File/Versions\.pod\.tmpl$
+^examples/file.*
+^examples/.*-out\.txt$

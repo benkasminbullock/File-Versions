@@ -5,11 +5,7 @@ File::Versions - Emacs-like versioned file names
 
 =head1 SYNOPSIS
 
-    use File::Versions 'make_backup';
-    my $backup = make_backup ('file');
-    # If the environment variable 'VERSION_CONTROL' is set to
-    # 'numbered', 'file' is moved to 'file.~1~'. The value of the new
-    # file name is put into '$backup'.
+[% INCLUDE "synopsis.pl" | xtidy %]
 
 =head1 VERSION
 
@@ -54,7 +50,7 @@ There is something similar to this module in the source code of the
 L</backup_name> and L</make_backup> are exported on demand. The export
 tag C<:all> exports everything.
 
-    use File::Versions ':all';
+[% INCLUDE "all.pl" | xtidy %]
 
 =head1 DEPENDENCIES
 
