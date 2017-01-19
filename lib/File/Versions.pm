@@ -1,34 +1,14 @@
-=head1 NAME
-
-File::Versions - Emacs-like versioned file names
-
-=head1 SYNOPSIS
-
-    use File::Versions 'make_backup';
-    my $backup = make_backup ('file');
-    # If the environment variable 'VERSION_CONTROL' is set to
-    # 'numbered', 'file' is moved to 'file.~1~'. The value of the new
-    # file name is put into '$backup'.
-
-=head1 DESCRIPTION
-
-This module duplicates the behaviour of programs like the Emacs text
-editor under Unix, where the environment variables C<VERSION_CONTROL>
-and C<SIMPLE_VERSION_CONTROL> allow one to make numbered backups of a
-file.
-
-=cut
-
 package File::Versions;
-require Exporter;
-@ISA = qw(Exporter);
-@EXPORT_OK = qw/backup_name make_backup/;
 use warnings;
 use strict;
+require Exporter;
+our @ISA = qw(Exporter);
+our @EXPORT_OK = qw/backup_name make_backup/;
+our %EXPORT_TAGS => ('all' => \@EXPORT_OK);
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = 0.07;
+our $VERSION = '0.08';
 
 # Get the type of version control. Not exported.
 
@@ -128,12 +108,6 @@ sub default_backup
 }
 
 
-=head2 backup_name
-
-     my $backup = backup_name ('file');
-
-=cut
-
 sub backup_name
 {
     my ($file, $options) = @_;
@@ -166,17 +140,6 @@ sub backup_name
     return $backup_file;
 }
 
-=head2 make_backup
-
-     make_backup ($file);
-
-Make a backup of the file specified by C<$file>. 
-
-This subroutine dies on error. If it succeeds, the return value is the
-name of the backup file.
-
-=cut
-
 sub make_backup
 {
     my ($file, $options) = @_;
@@ -192,25 +155,4 @@ sub make_backup
 }
 
 1;
-
-=head2 SEE ALSO
-
-There is something similar to this module in the source code of the
-"rename" utility which comes with Perl.
-
-=cut
-
-=head1 AUTHOR
-
-Ben Bullock, bkb@cpan.org
-
-=head1 COPYRIGHT & LICENCE
-
-Copyright (c) 2010, 2013, 2014 Ben Bullock 
-
-You can use, modify and redistribute this software library under the
-standard Perl licences (Gnu General Public Licence or Artistic
-licence).
-
-=cut
 

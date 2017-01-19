@@ -1,11 +1,15 @@
 # Repository
 ^\.git
 \.gitignore
-# Personal thing
-^build\.pl$
+# Build scripts for author
+^(build|make-pod)\.pl$
 # Local build files
 ^blib
 ^Makefile$
 # Auto-files not to be distributed
 ^MYMETA\.(json|yml)$
 ^pm_to_blib$
+# Tests for author
+^xt/.*\.t$
+# Templates
+^lib/File/Versions\.pod\.tmpl$

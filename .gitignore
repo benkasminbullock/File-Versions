@@ -4,3 +4,4 @@ MANIFEST
 MYMETA.*
 blib/*
 pm_to_blib
+lib/File/Versions.pod
