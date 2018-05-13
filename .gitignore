@@ -7,3 +7,4 @@ pm_to_blib
 lib/File/Versions.pod
 examples/*-out.txt
 examples/file*
+File-Versions-[0-9]*
