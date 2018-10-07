@@ -23,7 +23,7 @@ sub get_version_control
 
 sub get_file_max_version_number
 {
-    my ($file, $options) = @_;
+    my ($file) = @_;
 
     # The list of files which look like backups of this file.
 
@@ -146,7 +146,7 @@ sub backup_name
 
 sub make_backup
 {
-    my ($file, $options) = @_;
+    my ($file) = @_;
     if (! -f $file) {
         croak "Asked to make a backup of a file '$file' which does not exist";
     }
