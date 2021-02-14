@@ -55,9 +55,9 @@ sub get_file_max_version_number
 
 sub find_next_numbered
 {
-    my ($file, $options) = @_;
+    my ($file) = @_;
 
-    my $max_version_number = get_file_max_version_number ($file, $options);
+    my $max_version_number = get_file_max_version_number ($file);
     my $next = 1;
     if ($max_version_number) {
         $next = $max_version_number + 1;
@@ -89,8 +89,8 @@ sub simple_backup_suffix
 
 sub simple_backup
 {
-    my ($file, $options) = @_;
-    my $suffix = simple_backup_suffix ($options);
+    my ($file) = @_;
+    my $suffix = simple_backup_suffix ();
     my $backup = "$file$suffix";
     return $backup;
 }
@@ -100,21 +100,21 @@ sub simple_backup
 
 sub default_backup
 {
-    my ($file, $options) = @_;
+    my ($file) = @_;
     my $backup;
-    my $max_version_number = get_file_max_version_number ($file, $options);
+    my $max_version_number = get_file_max_version_number ($file);
     if ($max_version_number) {
-        $backup = find_next_numbered ($file, $options);
+        $backup = find_next_numbered ($file);
     }
     else {
-        $backup = simple_backup ($file, $options);
+        $backup = simple_backup ($file);
     }
 }
 
 
 sub backup_name
 {
-    my ($file, $options) = @_;
+    my ($file) = @_;
 
     my $backup_file;
 
@@ -122,7 +122,7 @@ sub backup_name
         $backup_file = $file;
     }
     else {
-        my $version_control = get_version_control ($options);
+        my $version_control = get_version_control ();
 
         if (! $version_control ||
             $version_control eq 'existing' ||
@@ -131,11 +131,11 @@ sub backup_name
         }
         if ($version_control eq 'numbered' ||
             $version_control eq 't') {
-            $backup_file = find_next_numbered ($file, $options);
+            $backup_file = find_next_numbered ($file);
         }
         elsif ($version_control eq 'simple' ||
                $version_control eq 'never') {
-            $backup_file = simple_backup ($file, $options);
+            $backup_file = simple_backup ($file);
         }
         else {
             croak __PACKAGE__, ": I don't know how to do the type of version control '$version_control' in your environment.\n";
