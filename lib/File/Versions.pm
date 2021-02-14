@@ -8,7 +8,7 @@ our %EXPORT_TAGS = ('all' => \@EXPORT_OK);
 use Carp;
 use List::Util qw/max/;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 # Get the type of version control. Not exported.
 
